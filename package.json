@@ -1,5 +1,5 @@
 {
-  "name": "game-tracker",
+  "name": "videogame-stats-tracker",
   "version": "1.0.0",
   "description": "Track video game statistics.",
   "main": "server.js",
