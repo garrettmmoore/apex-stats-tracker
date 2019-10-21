@@ -12,8 +12,22 @@ router.get("/:platform/:gamertag", async (req, res) => {
 
     const response = await fetch(
       `${process.env.TRACKER_API_URL}/profile/${platform}/${gamertag}`,
-      headers
+      {
+        headers
+      }
     );
+
+    // Convert response data to JSON format
+    const data = await response.json();
+
+    if (data.errors && data.errors.length > 0) {
+      return res.status(400).json({
+        message: "Profile Not Found"
+      });
+    }
+
+    // Respond to client with JSON and passing in data from response
+    res.json(data);
   } catch (err) {
     console.error(err);
     res.status(500).json({
