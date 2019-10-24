@@ -28,6 +28,30 @@
 </template>
 
 <script>
+export default {
+  name: "Search",
+  data() {
+    return {
+      platform: "psn",
+      gamertag: ""
+    };
+  },
+  beforeCreate() {
+    document.body.className = "body-bg-image";
+  },
+  methods: {
+    onSubmit() {
+      if (!this.gamertag) {
+        this.$toasted.show("Please enter a gamertag", {
+          duration: 3000,
+          icon: "exclamation-circle"
+        });
+      } else {
+        this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+      }
+    }
+  }
+};
 </script>
 
 <style>
