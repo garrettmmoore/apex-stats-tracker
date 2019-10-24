@@ -7,7 +7,27 @@
       <h1>${{error}}</h1>
       <router-link to="/">Go Back</router-link>
     </div>
-    <div v-if="profileData" class="container">{{profileData.metadata.activeLegendName}}</div>
+    <div v-if="profileData" class="container">
+      <h1 class="gamertag">
+        <img :src="profileData.platformInfo.avatarUrl" alt class="platform-avatar" />
+        {{profileData.platformInfo.platformUserId}}
+      </h1>
+      <div class="grid">
+        <div>
+          <img :src="profileData.segments[1].metadata.imageUrl" alt />
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4>
+                Selected Legend
+                <p>{{profileData.metadata.activeLegend}}</p>
+              </h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
