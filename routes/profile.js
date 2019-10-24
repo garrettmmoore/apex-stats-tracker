@@ -10,6 +10,7 @@ router.get('/:platform/:gamertag', async (req, res) => {
 
     const { platform, gamertag } = req.params;
 
+    // Use node-fetch to make a request to the third-party API
     const response = await fetch(
       `${process.env.TRACKER_API_URL}/profile/${platform}/${gamertag}`,
       {
@@ -21,7 +22,7 @@ router.get('/:platform/:gamertag', async (req, res) => {
     const data = await response.json();
 
     if (data.errors && data.errors.length > 0) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: 'Profile Not Found'
       });
     }
