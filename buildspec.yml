@@ -14,10 +14,15 @@ phases:
       - npm install
       - echo Installing FE source NPM dependencies...
       - cd client
+      - echo pwd
+      - pwd
       - npm install
+      - echo Installing FE source NPM DEV dependencies...
+      - npm install -D
   build:
     commands:
-      - echo Build started on `date`
+      - echo pwd
+      - pwd
       - echo Compiling the Node.js code
       - npm run build
   post_build:
