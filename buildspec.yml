@@ -7,10 +7,12 @@ phases:
       nodejs: 10
     install:
       commands:
-        - echo installing BE source NPM dependencies...
-        - npm install
+        - Globally install vue-cli...
+        - npm install -g @vue/cli
   pre_build:
     commands:
+      - echo installing BE source NPM dependencies...
+      - npm install
       - echo Installing FE source NPM dependencies...
       - cd client
       - npm install
