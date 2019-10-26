@@ -23,6 +23,8 @@ phases:
     commands:
       - echo pwd
       - pwd
+      - echo vue version
+      - vue --version
       - echo Compiling the Node.js code
       - npm run build
   post_build:
