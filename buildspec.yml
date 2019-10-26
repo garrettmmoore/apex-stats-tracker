@@ -5,10 +5,9 @@ phases:
   install:
     runtime-versions:
       nodejs: 10
-    install:
-      commands:
-        - Globally install vue-cli...
-        - npm install -g @vue/cli
+    commands:
+      - echo globally install vue-cli...
+      - npm install -g @vue/cli
   pre_build:
     commands:
       - echo installing BE source NPM dependencies...
