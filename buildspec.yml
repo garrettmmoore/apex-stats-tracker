@@ -44,9 +44,5 @@ artifacts:
     - package.json
     - public/**/*
     - routes/*
-    - node_modules/express/*
-    - node_modules/dotenv/*
-    - node_modules/concurrently/*
-    - node_modules/node-fetch/*
-    - node_modules/morgan/*
+    - node_modules/*
     - server.js
