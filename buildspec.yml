@@ -6,40 +6,41 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - echo globally install vue-cli...
-      - npm install -g @vue/cli
-      - npm install -g @vue/cli-service-global
+      - echo Remove existing global node_modules...
+      - rm -rf node_modules package-lock.json
   pre_build:
     commands:
-      - echo installing BE source NPM dependencies...
+      - echo Globally install vue-cli...
+      - npm install -g @vue/cli
+      - echo Remove existing BE node_modules...
+      - rm -rf node_modules package-lock.json
+      - echo Install BE NPM dependencies...
       - npm install
-      - echo Installing FE source NPM dependencies...
+      - echo Switch to client directory...
       - cd client
-      - echo pwd
-      - pwd
+      - echo Remove existing client node_modules...
+      - rm -rf node_modules package-lock.json
+      - echo pwd `pwd`
+      - echo Install client NPM dependencies...
       - npm install
-      - echo Installing FE source NPM DEV dependencies...
-      - npm install -D
   build:
     commands:
-      - echo pwd
-      - pwd
-      - echo vue version
+      - echo pwd `pwd`
+      - echo Vue version...
       - vue --version
-      - echo Compiling the Node.js code
+      - echo Compile production build...
       - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
 # Include only the files required for your application to run.
-# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages
-# used only for building and testing.
-# ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
 artifacts:
   files:
+    - package-lock.json
     - package.json
-    - public/*
+    - public/
     - routes/*
+    # - node_modules
     - node_modules/express/*
     - node_modules/dotenv/*
     - node_modules/concurrently/*
