@@ -10,12 +10,10 @@ phases:
       - rm -rf node_modules package-lock.json
   pre_build:
     commands:
-      - echo ls `ls`
       - echo Globally install vue-cli...
       - npm install -g @vue/cli
       - echo ls `ls`
       - echo Remove existing BE node_modules...
-      - echo ls `ls`
       - rm -rf node_modules package-lock.json
       - echo ls `ls`
       - echo Install BE NPM dependencies...
@@ -34,9 +32,6 @@ phases:
   build:
     commands:
       - echo pwd `pwd`
-      - echo Vue version...
-      - vue --version
-      - echo ls `ls`
       - echo Compile production build...
       - npm run build
   post_build:
@@ -47,7 +42,11 @@ artifacts:
   files:
     - package-lock.json
     - package.json
-    - public/
+    - public/**/*
     - routes/*
-    - node_modules/*
+    - node_modules/express/*
+    - node_modules/dotenv/*
+    - node_modules/concurrently/*
+    - node_modules/node-fetch/*
+    - node_modules/morgan/*
     - server.js
