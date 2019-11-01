@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 
-router.get('/:platform/:gamertag', async (req, res) => {
+router.get('/:game/:platform/:gamertag', async (req, res) => {
   try {
     const headers = {
       'TRN-Api-Key': process.env.TRACKER_API_KEY
     };
 
-    const { platform, gamertag } = req.params;
+    const { game, platform, gamertag } = req.params;
 
     // Use node-fetch to make a request to the third-party API
     const response = await fetch(
-      `${process.env.TRACKER_API_URL}/profile/${platform}/${gamertag}`,
+      `${process.env.TRACKER_API_URL}/${game}/standard/profile/${platform}/${gamertag}`,
       {
         headers
       }
