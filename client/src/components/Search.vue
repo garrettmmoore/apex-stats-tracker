@@ -3,6 +3,13 @@
     <h1>Track Player Stats</h1>
     <form v-on:submit.prevent="onSubmit">
       <div class="form-group">
+        <label for="game">Game</label>
+        <select name="game" id="game" v-model="game">
+          <option value="apex">Apex</option>
+          <option value="overwatch">Overwatch</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="platform">Platform</label>
         <select name="platform" id="platform" v-model="platform">
           <option value="psn">Playstation</option>
@@ -32,6 +39,7 @@ export default {
   name: "Search",
   data() {
     return {
+      game: "apex",
       platform: "psn",
       gamertag: ""
     };
@@ -47,7 +55,9 @@ export default {
           icon: "exclamation-circle"
         });
       } else {
-        this.$router.push(`/profile/${this.platform}/${this.gamertag}`);
+        this.$router.push(
+          `/profile/${this.game}/${this.platform}/${this.gamertag}`
+        );
       }
     }
   }

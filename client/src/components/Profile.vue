@@ -79,7 +79,7 @@ export default {
     this.loading = true;
     try {
       const res = await axios.get(
-        `/api/v1/profile/${this.$route.params.platform}/${this.$route.params.gamertag}`
+        `/api/v1/profile/${this.$route.params.game}/${this.$route.params.platform}/${this.$route.params.gamertag}`
       );
       this.profileData = res.data.data;
       console.log(this.profileData);
