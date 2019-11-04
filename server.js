@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Profile routes
-app.use('/api/v1/profile', require('./routes/profile'));
+app.use('/api/v2/profile', require('./routes/profile'));
 
 // Handle production
 if (process.env.NODE_ENV === 'production') {

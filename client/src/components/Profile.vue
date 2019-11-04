@@ -10,17 +10,17 @@
     <div v-if="profileData" class="container">
       <h1 class="gamertag">
         <img :src="profileData.platformInfo.avatarUrl" alt class="platform-avatar" />
-        {{profileData.platformInfo.platformUserId}}
+        {{profileData.platformInfo.platformUserIdentifier}}
       </h1>
       <div class="grid">
-        <div>
+        <div v-if="profileData.segments[1].metadata.imageUrl">
           <img :src="profileData.segments[1].metadata.imageUrl" alt />
         </div>
       </div>
       <div class="grid">
         <div>
           <ul>
-            <li>
+            <li v-if="profileData.metadata.activeLegendName">
               <h4>
                 Selected Legend
                 <p>{{profileData.metadata.activeLegendName}}</p>
@@ -91,10 +91,9 @@ export default {
     this.loading = true;
     try {
       const res = await axios.get(
-        `/api/v1/profile/${this.$route.params.game}/${this.$route.params.platform}/${this.$route.params.gamertag}`
+        `/api/v2/profile/${this.$route.params.game}/${this.$route.params.platform}/${this.$route.params.gamertag}`
       );
       this.profileData = res.data.data;
-      console.log(this.profileData);
       this.loading = false;
     } catch (err) {
       this.loading = false;
@@ -167,14 +166,22 @@ li span {
     display: block;
     text-align: center;
   }
-  .platform-avatar {
-    display: none;
+  h1.gamertag {
+    font-size: 1.6rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
   }
   .grid {
     grid-template-columns: 1fr;
+    grid-gap: 0em;
   }
   li p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 </style>
