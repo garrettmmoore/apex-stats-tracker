@@ -6,7 +6,7 @@
         <label for="game">Game</label>
         <select name="game" id="game" v-model="game">
           <option value="apex">Apex</option>
-          <option value="overwatch">Overwatch</option>
+          <option value="division-2">Division 2</option>
         </select>
       </div>
       <div class="form-group">
@@ -24,7 +24,7 @@
           name="text"
           v-model="gamertag"
           id="gamertag"
-          placeholder="Origin ID, Xbox Love gamertag, PSN ID, etc"
+          placeholder="Origin ID, Xbox gamertag, or PSN ID"
         />
       </div>
       <div class="form-group">
