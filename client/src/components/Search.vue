@@ -1,19 +1,18 @@
 <template>
   <section class="search">
-    <h1>Track Player Stats</h1>
+    <h1>Query Apex Player Stats</h1>
     <form v-on:submit.prevent="onSubmit">
       <div class="form-group">
         <label for="game">Game</label>
         <select name="game" id="game" v-model="game">
           <option value="apex">Apex</option>
-          <option value="division-2">Division 2</option>
         </select>
       </div>
       <div class="form-group">
         <label for="platform">Platform</label>
         <select name="platform" id="platform" v-model="platform">
-          <option value="psn">Playstation</option>
           <option value="xbl">Xbox</option>
+          <option value="psn">Playstation</option>
           <option value="Origin">Origin</option>
         </select>
       </div>
@@ -40,7 +39,7 @@ export default {
   data() {
     return {
       game: "apex",
-      platform: "psn",
+      platform: "xbl",
       gamertag: ""
     };
   },
