@@ -1,6 +1,6 @@
 <template>
   <section class="search">
-    <h1>Query Apex Player Stats</h1>
+    <h1>Find Apex Player Stats</h1>
     <form v-on:submit.prevent="onSubmit">
       <div class="form-group">
         <label for="game">Game</label>
@@ -23,7 +23,7 @@
           name="text"
           v-model="gamertag"
           id="gamertag"
-          placeholder="Origin ID, Xbox gamertag, or PSN ID"
+          placeholder="Xbox gamertag, PSN ID, or Origin ID"
         />
       </div>
       <div class="form-group">
