@@ -12,23 +12,17 @@ phases:
     commands:
       - echo Globally install vue-cli...
       - npm install -g @vue/cli
-      - echo ls `ls`
       - echo Remove existing BE node_modules...
       - rm -rf node_modules package-lock.json
-      - echo ls `ls`
       - echo Install BE NPM dependencies...
       - npm install
-      - echo ls `ls`
       - echo Switch to client directory...
       - cd client
-      - echo ls `ls`
       - echo Remove existing client node_modules...
       - rm -rf node_modules package-lock.json
       - echo pwd `pwd`
-      - echo ls `ls`
       - echo Install client NPM dependencies...
       - npm install
-      - echo ls `ls`
   build:
     commands:
       - echo pwd `pwd`
