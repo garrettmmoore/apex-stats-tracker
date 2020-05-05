@@ -1,3 +1,3 @@
-# Videogame Stats Tracker
+# Apex Stats Tracker
 
-## This is a video game stats tracker
+View and keep track of your online game statistics
