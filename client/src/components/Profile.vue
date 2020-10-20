@@ -33,11 +33,11 @@
                 <span>({{profileData.segments[0].stats.matchesPlayed.percentile}})</span>
               </p>
             </li>
-            <li v-if="profileData.segments[0].stats.season2Wins">
-              <h4>Season 2 Wins</h4>
+            <li v-if="profileData.segments[0].stats.seasonWins">
+              <h4>Current Season Wins</h4>
               <p>
-                {{profileData.segments[0].stats.season2Wins.displayValue}}
-                <span>({{profileData.segments[0].stats.season2Wins.percentile}})</span>
+                {{profileData.segments[0].stats.seasonWins.displayValue}}
+                <span>({{profileData.segments[0].stats.seasonWins.percentile}})</span>
               </p>
             </li>
           </ul>
@@ -55,7 +55,7 @@
               <h4>Lifetime Kills</h4>
               <p>
                 {{profileData.segments[0].stats.kills.displayValue}}
-                <span>({{profileData.segments[0].stats.kills.percentile}}%)</span>
+                {{profileData.segments[0].stats.kills.percentile}}%
               </p>
             </li>
             <li v-if="profileData.segments[0].stats.damage">

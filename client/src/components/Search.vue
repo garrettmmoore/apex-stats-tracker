@@ -6,6 +6,7 @@
         <label for="game">Game</label>
         <select name="game" id="game" v-model="game">
           <option value="apex">Apex</option>
+          <option value="division-2">Division 2</option>
         </select>
       </div>
       <div class="form-group">
@@ -13,7 +14,7 @@
         <select name="platform" id="platform" v-model="platform">
           <option value="xbl">Xbox</option>
           <option value="psn">Playstation</option>
-          <option value="Origin">Origin</option>
+          <option value="uplay">Uplay</option>
         </select>
       </div>
       <div class="form-group">
