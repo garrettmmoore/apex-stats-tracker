@@ -4,7 +4,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.13.5",
     "core-js": "^3.9.1",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
